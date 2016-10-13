@@ -55,19 +55,21 @@ PatchModules:
 
 	# Until we figure out how to prevent the bootstrapper from loading an optimized kernel,
 	# let's explicitly trip the flag. Yes, this is gross. Let's fix it.
-	#sed -i "s/combinedModulesHash;/combinedModulesHash = false, optimizedLoading = false;/" LivelyKernel/core/lively/bootstrap.js
+	sed -i "s/combinedModulesHash;/combinedModulesHash = false, optimizedLoading = false;/" LivelyKernel/core/lively/bootstrap.js
 
 	# A few anonymous modules seem to depend on lively.ide, so until we can decouple them,
 	# let's keep ide.js but remove its dependent modules.
 	sed -i "1cmodule('lively.ide').requires().toRun(function() {" LivelyKernel/core/lively/ide.js;
 
-
 Configure:
-	cp config.json LivelyKernel/core/lively/localconfig.json
+
+	#cp config.json LivelyKernel/core/lively/localconfig.json
+	cp worlds/*.html LivelyKernel
+	#cp apps/* LivelyKernel/apps
 
 clean:
 	rm -rf LivelyKernel
 
 
 start:
-	cd LivelyKernel && node bin/lk-server.js --no-subservers
+	cd LivelyKernel && node bin/lk-server.js
