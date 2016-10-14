@@ -3,6 +3,7 @@
 all: GetLively PruneCore PatchModules Configure
 
 GetLively:
+	mkdir -p build
 	cd build && git clone https://github.com/LivelyKernel/LivelyKernel
 
 PruneCore:
