@@ -1,7 +1,5 @@
 # lively.deploy
 
-## Summary
-
 This repository explores ways to reduce the deployment footprint of Lively Kernel-based applications. The included Makefile fetches a new copy of Lively Kernel, pruning development tools and research extensions to provide a basic Morphic substrate for restricted end-user applications.
 
 Most of this repository is a stopgap until we find a better way to deploy reduced Lively applications. It's provided as-is with no warranty. Good luck :)
@@ -9,7 +7,7 @@ Most of this repository is a stopgap until we find a better way to deploy reduce
 ## Usage
 
 1. Place serialized Lively worlds for deployment in src/worlds.
-2. Call `$ make`. This will:
+2. Call `make`. This will:
    * Fetch a new copy of Lively from github, installing it in build/LivelyKernel.
    * Prune parts of the core related to interactive development (code browsers, editors, etc).
    * Patch a few modules needing to keep the system from imploding on start.
@@ -20,12 +18,12 @@ Most of this repository is a stopgap until we find a better way to deploy reduce
 
 ## Directory Structure
 
-* *src/worlds*: Holds serialized application worlds for deployment.
-* *src/apps*: Holds application-specific modules added to deployed world requirements (TOOD).
-* *build/*: Holds deployed Lively instance (build/LiveKernel).
-* *doc/lively-full.svg*: Visualization of module dependencies in default Lively installation as of LivelyKernel/LivelyKernel commit  095255a.
-* doc/lively-pruned.svg*: Visualization of module dependencies in pruned Lively installation on build produced by this Makefile.
-* doc/livelyModuleGraph.js*: Snippets for generating dot file fragments from a topological sort of module dependencies.
+* **src/worlds**: Holds serialized application worlds for deployment.
+* **src/apps**: Holds application-specific modules added to deployed world requirements (TOOD).
+* **build/**: Holds deployed Lively instance (build/LiveKernel).
+* **doc/lively-full.svg**: Visualization of module dependencies in default Lively installation as of LivelyKernel/LivelyKernel commit  095255a.
+* **doc/lively-pruned.svg**: Visualization of module dependencies in pruned Lively installation on build produced by this Makefile.
+* **doc/livelyModuleGraph.js**: Snippets for generating dot file fragments from a topological sort of module dependencies.
 
 
 ## TODO
