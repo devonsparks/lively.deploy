@@ -19,7 +19,7 @@ Most of this repository is a stopgap until we find a better way to deploy reduce
 ## Directory Structure
 
 * **src/worlds**: Holds serialized application worlds for deployment.
-* **src/apps**: Holds application-specific modules added to deployed world requirements (TOOD).
+* **src/apps**: Holds application-specific modules added to deployed world requirements (TODO).
 * **build/**: Holds deployed Lively instance (build/LiveKernel).
 * **doc/lively-full.svg**: Visualization of module dependencies in default Lively installation as of LivelyKernel/LivelyKernel commit  095255a.
 * **doc/lively-pruned.svg**: Visualization of module dependencies in pruned Lively installation on build produced by this Makefile.
